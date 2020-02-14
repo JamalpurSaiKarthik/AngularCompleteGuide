@@ -1,0 +1,21 @@
+<label>Server Name</label>
+<!--One Way Data Binding-->
+<!-- <input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<p>{{serverName}}</p> -->
+
+<!--Two Way Data Binding-->
+<input type="text" class="form-control" [(ngModel)]="serverName">
+<p>{{serverName}}</p>
+
+<!--Click Event binding-->
+<button class="btn btn-primary" (click)="onServerAdded()" >Add Server</button>
+
+<!--Two Way Data Binding Using String Interpolation-->
+<!-- <p>{{serverCreationStatus}}</p> -->
+
+<!--Using NgIf Structural Directive-->
+<p *ngIf="serverCreated">Server was created, Server Name is {{serverName}}</p>
+
+<!--Using NgFor Structural Directive-->
+<app-server *ngFor="let server of servers;let i = index"></app-server>
+<!-- <app-server></app-server> -->
